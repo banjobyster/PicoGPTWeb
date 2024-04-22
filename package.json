@@ -1,11 +1,15 @@
 {
-  "name": "llmwebgpu",
+  "name": "picogptweb",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://banjobyster.github.io/PicoGPTWeb/",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "postdeploy": "echo 'Deployed to Github Pages!'",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "format": "prettier --write \"src/**/*.+(js|jsx|ts|tsx|css|scss|json)\""
