@@ -105,9 +105,11 @@ const InferenceWindow = () => {
             boxSizing={'border-box'}
             marginBottom={'4px'}
           >
-            <span style={{ color: '#7EA1FF' }}>{text.prompt}</span>
-            <span style={{ color: '#9CAFAA' }}>{text.completion}</span>
-            <span style={{ color: '#FFFBDA', backgroundColor: '#ED9455' }}>{text.lastToken}</span>
+            <pre style={{ whiteSpace: 'pre-wrap', fontSize: '16px', fontFamily: 'Times', margin: 0 }}>
+              <span style={{ color: '#7EA1FF' }}>{text.prompt}</span>
+              <span style={{ color: '#9CAFAA' }}>{text.completion}</span>
+              <span style={{ color: '#FFFBDA', backgroundColor: '#ED9455' }}>{text.lastToken}</span>
+            </pre>
           </Box>
         </div>
       )}

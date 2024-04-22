@@ -11,8 +11,7 @@ export const loadIntoIndexedDB = (buffer: Float32Array): Promise<string> => {
 
     request.onupgradeneeded = (event) => {
       const db = (event.target as any).result;
-      const store = db.createObjectStore(STORE_NAME, { keyPath: 'id' });
-      store.put({ id: 1, data: buffer });
+      db.createObjectStore(STORE_NAME, { keyPath: 'id' });
     };
 
     request.onsuccess = (event) => {
@@ -82,6 +81,11 @@ export const deleteFromIndexedDB = (): Promise<string> => {
       reject('Error opening IndexedDB');
     };
 
+    request.onupgradeneeded = (event) => {
+      const db = (event.target as any).result;
+      db.createObjectStore(STORE_NAME, { keyPath: 'id' });
+    };
+
     request.onsuccess = (event) => {
       const db = (event.target as any).result;
       if (!db.objectStoreNames.contains(STORE_NAME)) {
@@ -109,6 +113,11 @@ export const checkStoreInIndexedDB = (): Promise<boolean> => {
 
     request.onerror = (event) => {
       reject('Error opening IndexedDB');
+    };
+
+    request.onupgradeneeded = (event) => {
+      const db = (event.target as any).result;
+      db.createObjectStore(STORE_NAME, { keyPath: 'id' });
     };
 
     request.onsuccess = async (event) => {

@@ -1,6 +1,6 @@
 import { Chip } from '@mui/material';
 
-const TransformerBlock = ({ layer, currentLayer }: { layer: number; currentLayer: boolean }) => {
+const TransformerBlock = ({ layer, currentLayer }: { layer: number; currentLayer: number }) => {
   return (
     <div
       style={{
@@ -9,17 +9,18 @@ const TransformerBlock = ({ layer, currentLayer }: { layer: number; currentLayer
         left: `calc(20px + ${layer * 5}px)`,
         width: '200px',
         height: '200px',
-        border: `2px solid ${currentLayer ? '#836FFF' : '#FF6868'}`,
+        border: `2px solid ${currentLayer === layer ? '#836FFF' : '#FF6868'}`,
         boxSizing: 'border-box',
-        backgroundColor: `${currentLayer ? '#15F5BA' : '#DCFFB7'}`,
+        backgroundColor: `${currentLayer === layer ? '#15F5BA' : '#DCFFB7'}`,
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         color: '#0C134F',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        opacity: `${currentLayer < layer ? 0.2 : 1}`
       }}
     >
-      Transformer Block
+      Transformer Block {layer + 1}
     </div>
   );
 };
@@ -87,7 +88,7 @@ const TransformerVisualizer = ({
         }}
       >
         {Array.from({ length: n_layer }, (_, i) => (
-          <TransformerBlock key={i} layer={i} currentLayer={i == currentLayer} />
+          <TransformerBlock key={i} layer={i} currentLayer={currentLayer} />
         ))}
       </div>
       <TopKTokensBlock tokens={topKTokens} selectedToken={selectedToken} />
