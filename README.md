@@ -2,7 +2,7 @@
 
 
 
-https://github.com/banjobyster/PicoGPTWeb/assets/77842809/a7e564f3-7c31-4320-a167-9040c7dec303
+https://github.com/banjobyster/PicoGPTWeb/assets/77842809/1641b55d-72d8-4fd6-b12c-3ec0a70b322b
 
 
 
