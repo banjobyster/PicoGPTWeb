@@ -1,5 +1,11 @@
 # PicoGPT Web
 
+
+
+https://github.com/banjobyster/PicoGPTWeb/assets/77842809/a7e564f3-7c31-4320-a167-9040c7dec303
+
+
+
 PicoGPT Web is a web version of PicoGPT by [Jay Mody](https://github.com/jaymody), inspired by the videos of 3Blue1Brown on GPT and built to create a GPT-2 decoder stack. The project was initiated to gain a hands-on understanding of GPT and explore the usage of WebGPU.
 
 ## Acknowledgements
